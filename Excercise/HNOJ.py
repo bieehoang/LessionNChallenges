@@ -325,20 +325,21 @@ all the code within the else statement's brackets is executed instead"""
 
 algothrm_insertionsort = ["Insertion-sort algorithm"]
 #** Insection sort: This is the algothrm same with sort the wild card when playing
-# def insertionSortAlgothrm(arr):
-#     for i in range(1, len(arr)):
-#             key = arr[i] #
-#             j = i - 1
-#             while j >= 0 and arr[j] > key:
-#                 arr[i] = arr[j]
-#                 j -= 1
-#                 # print(j)
-#             arr[j + 1] = key
-#             print(key)
-#             print(arr)
-# insertionSortAlgothrm(arr)
-# print(arr)
-# print(arr)
+def insertionSortAlgothrm(arr):
+    for i in range(0, len(arr)):
+            key = arr[i] #
+            j = i + 1
+            while j >= 0 and arr[j] < key:
+                arr[j] = arr[i]
+                j -= 1
+                # print(j)
+            arr[j -1] = key
+            print(key)
+            print(arr)
+
+arr = [12,4,23,1,5]
+insertionSortAlgothrm(arr)
+print(arr)
 
 
 """Initially, the zoo have a single chick. A chick gives birth to 2 chicks every day and
