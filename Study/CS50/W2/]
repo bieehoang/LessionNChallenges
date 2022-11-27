@@ -13,7 +13,7 @@ bool add_two_arg(int a, int b, int c){
 };
 */
 int main(void){
-	long ato = 'Hello everybody';
-	printf("%ld\n", ato);
+	int ato = 2;
+	printf("%i", ato);
 };
 	

@@ -1,6 +1,8 @@
 """NOTE: To see all part of this unit, type shortcut Ctrl + A to select all characters,
     then type shortcut Ctrl + Shift + '-': to compact.
 """
+from math import floor
+
 """Nhập liên tục vào một số nguyên,
 đến khi số lượng số chẵn bằng số lượng số lẻ thì dừng lại và in ra số lượng của chúng.
 # Input: Gồm nhiều dòng, mỗi dòng chứa một số nguyên
@@ -325,24 +327,51 @@ all the code within the else statement's brackets is executed instead"""
 
 algothrm_insertionsort = ["Insertion-sort algorithm"]
 #** Insection sort: This is the algothrm same with sort the wild card when playing
-def insertionSortAlgothrm(arr):
-    for i in range(0, len(arr)):
-            key = arr[i] #
-            j = i + 1
-            while j >= 0 and arr[j] < key:
-                arr[j] = arr[i]
-                j -= 1
-                # print(j)
-            arr[j -1] = key
-            print(key)
-            print(arr)
-
-arr = [12,4,23,1,5]
-insertionSortAlgothrm(arr)
-print(arr)
-
+#def insertionSortAlgothrm(arr):
+#    for i in range(0, len(arr)):
+#            key = arr[i] #
+#            j = i + 1
+#            while j >= 0 and arr[j] < key:
+#                arr[j] = arr[i]
+#                j -= 1
+#                # print(j)
+#            arr[j -1] = key
+#            print(key)
+#            print(arr)
+#arr = [12,4,23,1,5]
+#insertionSortAlgothrm(arr)
+#print(arr)
+#
 
 """Initially, the zoo have a single chick. A chick gives birth to 2 chicks every day and
  the life expectancy of a chick is 6 days. Zoo officials want to buy food for chicks so 
  they want to know the number of chicks on an Nth day. 
 """
+
+def findOpposite(n, nInput):
+#    distantA = []
+#    distantB = []
+    lengthN = []
+    for i in range(0, n+1):
+        lengthN.append(i)
+    print(lengthN)
+    cut = int(n/2)
+    distantA = list(lengthN[0:cut+1])
+    distantB = lengthN[cut+1:]
+    print(distantA,distantB)
+    if nInput > n:
+        print(f'{nInput} is not in list\nPlease try again')
+        exit()
+    if nInput in distantA:
+        for i in distantA:
+            if i == nInput:
+                print('Opposite of', distantA[i],'is', distantB[i])
+    elif nInput in distantB:
+        for i in distantB:
+            if i == nInput:
+                print(i)
+                print('Opposite of', distantB[distantB.index(i)],'is ', distantA[distantB.index(i)])
+    else:
+        print(f'{nInput} was wrong')
+
+findOpposite(7,6)
