@@ -4,7 +4,7 @@
 ## Setup
 * DEV *
 - Install mongodb 
-- Install npm version 14. 
+- Install nodejs version 14. 
 
 ## Steps:
 - *Linux*:
