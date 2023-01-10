@@ -7,25 +7,24 @@
 - Install npm version 14. 
 
 ## Steps:
-Setup project  
 - *Linux*:
+Setup project  
+
 - Step 1: Install packages && reconfig
 	> Checkout, pull from master to branch feature/bdstraining
 	>	
 	> Diagram: 
 	```	
-		Meta:{
-		API: Server, 
-		CMS: Admin,  
-		WWW: User View }
+		Meta: {	API: Server, 
+			CMS: Admin,  
+			WWW: User View }
 	```
 	>	
 	> Install packages ( api, www, cms )/package.json
 	>	
 	> Reconfig:
-		```
-		API && WWW/config.js: 
-		---	
+	```
+		API && WWW/config.js 
 		Instance: {
 			// reactpress.local:port => localhost:port
 			const WebConfig = {
@@ -51,10 +50,10 @@ Setup project
  				}
 			}
 		}	
-		```	
+	```	
 	>
 	> CMS:
-		``` 
+	``` 
 		Error: { 
 		// With froala third_party error:
   
@@ -62,12 +61,12 @@ Setup project
 		 
 		$ cp file www/pages/public/css/reactpress.min.css > cms/source/plugins/froala/js/third_party/
 		}
-		```
+	```
 	>
 - Step 2: Run product
-	* DIR: .../reactpress/
+	** DIR: .../reactpress/ **
 	``` 
-	Steps: {
+	Steps:
 		- Restore mongodb: 
 		> mongorestore -db namedb DIR/prod_backup/backup/bds 
 		
@@ -80,6 +79,6 @@ Setup project
 		- Run Admin Site:
 		> cd Code/cms && npm run start   ( For Windows )
 		> cd Code/cms && npm run ustart  ( For Linux )
-}
+		
 	```
 
