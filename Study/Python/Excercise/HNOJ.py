@@ -348,30 +348,55 @@ algothrm_insertionsort = ["Insertion-sort algorithm"]
  they want to know the number of chicks on an Nth day. 
 """
 
-def findOpposite(n, nInput):
-#    distantA = []
-#    distantB = []
-    lengthN = []
-    for i in range(0, n+1):
-        lengthN.append(i)
-    print(lengthN)
-    cut = int(n/2)
-    distantA = list(lengthN[0:cut+1])
-    distantB = lengthN[cut+1:]
-    print(distantA,distantB)
-    if nInput > n:
-        print(f'{nInput} is not in list\nPlease try again')
-        exit()
-    if nInput in distantA:
-        for i in distantA:
-            if i == nInput:
-                print('Opposite of', distantA[i],'is', distantB[i])
-    elif nInput in distantB:
-        for i in distantB:
-            if i == nInput:
-                print(i)
-                print('Opposite of', distantB[distantB.index(i)],'is ', distantA[distantB.index(i)])
-    else:
-        print(f'{nInput} was wrong')
+#def findOpposite(n, nInput):
+##    distantA = []
+##    distantB = []
+#    lengthN = []
+#    for i in range(0, n+1):
+#        lengthN.append(i)
+#    print(lengthN)
+#    cut = int(n/2)
+#    distantA = list(lengthN[0:cut+1])
+#    distantB = lengthN[cut+1:]
+#    print(distantA,distantB)
+#    if nInput > n:
+#        print(f'{nInput} is not in list\nPlease try again')
+#        exit()
+#    if nInput in distantA:
+#        for i in distantA:
+#            if i == nInput:
+#                print('Opposite of', distantA[i],'is', distantB[i])
+#    elif nInput in distantB:
+#        for i in distantB:
+#            if i == nInput:
+#                print(i)
+#                print('Opposite of', distantB[distantB.index(i)],'is ', distantA[distantB.index(i)])
+#    else:
+#        print(f'{nInput} was wrong')
+#
+#findOpposite(7,6)
 
-findOpposite(7,6)
+algorithm_quicksort = 'quick sort algorithm'
+def quickSort(list):
+    if len(list) < 2:
+        return list 
+    else:
+        p = list[0]
+        left_list = []
+        right_list = []
+        for i in range(1, len(list)):
+            if list[i] <= p:
+                left_list.append(list[i])
+            elif list[i] >= p:
+                right_list.append(list[i])
+    return rm_mulsb([quickSort(left_list), p, quickSort(right_list)])
+def rm_mulsb(arr):
+    result = []
+    for i in arr:
+        if type(i) == list:
+            result.extend(rm_mulsb(i))
+        else:
+            result.append(i)
+    return result
+a = [1, 7, 4, 1, 10, 9, -2]
+print(quickSort(a))
